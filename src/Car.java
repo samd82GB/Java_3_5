@@ -7,6 +7,7 @@ public class Car implements Runnable {
     private int speed;
     private String name;
     CyclicBarrier cyclicBarrier;
+    private boolean lastLap;
 
 
     public String getName() {
@@ -37,8 +38,17 @@ public class Car implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+        //для членов листа от 0 до размера листа выполняем получение объекта из листа и метод go для него
         for (int i = 0; i < race.getStages().size(); i++) {
-            race.getStages().get(i).go(this);
+            //если последний этап, то взводим флаг последнего этапа
+            if (i == race.getStages().size()-1) {
+                lastLap = true;
+            }
+            race.getStages().get(i).go(this, lastLap);
+
+
         }
     }
 }

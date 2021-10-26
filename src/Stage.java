@@ -6,5 +6,5 @@ public abstract class Stage {
         return description;
     }
 
-    public abstract void go(Car c);
+    public abstract void go(Car c, boolean lastLap);
 }
