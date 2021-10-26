@@ -19,7 +19,7 @@ public class Road extends Stage {
             System.out.println(c.getName() + " закончил этап: " + description);
             if (lastLap) {
                 cdl.countDown();
-                if (cdl.getCount() == (CARS_COUNT-1)) {
+                if (cdl.getCount() == (CARS_COUNT - 1)) {
                     System.out.println(c.getName() + " ПОБЕДИТЕЛЬ!!! ");
                 }
             }

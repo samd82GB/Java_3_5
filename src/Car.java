@@ -18,12 +18,12 @@ public class Car implements Runnable {
         return speed;
     }
 
-    public Car(CyclicBarrier cb ,Race race, int speed) {
+    public Car(CyclicBarrier cb, Race race, int speed) {
         this.race = race;
         this.speed = speed;
         CARS_COUNT++;
         this.name = "Участник #" + CARS_COUNT;
-        cyclicBarrier= cb;
+        cyclicBarrier = cb;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Car implements Runnable {
         //для членов листа от 0 до размера листа выполняем получение объекта из листа и метод go для него
         for (int i = 0; i < race.getStages().size(); i++) {
             //если последний этап, то взводим флаг последнего этапа
-            if (i == race.getStages().size()-1) {
+            if (i == race.getStages().size() - 1) {
                 lastLap = true;
             }
             race.getStages().get(i).go(this, lastLap);

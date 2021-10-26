@@ -17,7 +17,7 @@ public class Tunnel extends Stage {
             try {
 
                 System.out.println(c.getName() + " готовится к этапу(ждет): " +
-                 description);
+                        description);
 
                 semaphore.acquire();
 
@@ -31,7 +31,7 @@ public class Tunnel extends Stage {
                 System.out.println(c.getName() + " закончил этап: " +
                         description);
                 semaphore.release();
-               }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
